@@ -10,6 +10,13 @@ metadata:
 data:
   dragent.yaml: |
     new_k8s: true
+    k8s_extra_resources:
+      include:
+        - services
+        - resourcequotas
+        - persistentvolumes
+        - persistentvolumeclaims
+        - horizontalpodautoscalers
 {{- if .Values.secure.enabled }}
     security:
       enabled: true
